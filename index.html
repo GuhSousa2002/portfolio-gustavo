@@ -542,50 +542,34 @@
             </article>
 
             <article class="project-card project-card--reverse" data-reveal>
-              <div class="project-card__media">
-                <div class="ui-preview ui-preview--sindico" aria-hidden="true">
-                  <div class="ui-preview__chrome">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+              <div class="project-card__media" style="flex-direction:column;gap:0">
+                <div class="screenshot-slider" id="slider-sindico" aria-label="Screenshots do Síndico Digital">
+                  <div class="screenshot-slider__track" id="slider-sindico-track">
+                    <figure class="screenshot-slide">
+                      <img src="./assets/sindico-painel.png" alt="Síndico Digital — Painel principal" loading="lazy" />
+                      <figcaption>Painel — Visão geral do condomínio com resumo financeiro e comunicados</figcaption>
+                    </figure>
+                    <figure class="screenshot-slide">
+                      <img src="./assets/sindico-financeiro.png" alt="Síndico Digital — Módulo financeiro" loading="lazy" />
+                      <figcaption>Financeiro — Taxa condominial, Pix, boleto e histórico de pagamentos</figcaption>
+                    </figure>
+                    <figure class="screenshot-slide">
+                      <img src="./assets/sindico-transparencia.png" alt="Síndico Digital — Transparência" loading="lazy" />
+                      <figcaption>Transparência — Receitas, despesas e comprovantes do condomínio</figcaption>
+                    </figure>
+                    <figure class="screenshot-slide">
+                      <img src="./assets/sindico-salao.png" alt="Síndico Digital — Salão de Festa" loading="lazy" />
+                      <figcaption>Salão de Festa — Agendamento com calendário e horários disponíveis</figcaption>
+                    </figure>
                   </div>
-                  <div class="ui-preview__canvas ui-preview__canvas--single">
-                    <div class="ui-preview__screen">
-                      <section class="ui-preview__panel ui-preview__panel--hero">
-                        <span class="ui-preview__eyebrow">Gestão condominial</span>
-                        <strong class="ui-preview__headline">Comunicação, transparência e rotina administrativa</strong>
-                      </section>
-
-                      <div class="ui-preview__modules ui-preview__modules--wide">
-                        <article class="ui-preview__module">
-                          <span>Avisos</span>
-                          <strong>Comunicados</strong>
-                        </article>
-                        <article class="ui-preview__module">
-                          <span>Financeiro</span>
-                          <strong>Boletos</strong>
-                        </article>
-                        <article class="ui-preview__module">
-                          <span>Reservas</span>
-                          <strong>Agenda</strong>
-                        </article>
-                        <article class="ui-preview__module">
-                          <span>Documentos</span>
-                          <strong>Central</strong>
-                        </article>
-                      </div>
-
-                      <section class="ui-preview__panel">
-                        <span class="ui-preview__eyebrow">Experiência organizada</span>
-                        <div class="ui-preview__bars">
-                          <div class="ui-preview__bar ui-preview__bar--accent"></div>
-                          <div class="ui-preview__bar ui-preview__bar--medium"></div>
-                          <div class="ui-preview__bar"></div>
-                        </div>
-                      </section>
-                    </div>
-                  </div>
-                  <p class="ui-preview__caption">Preview conceitual para exibir screenshots do produto</p>
+                  <button class="slider-btn slider-btn--prev" data-slider="sindico" data-dir="-1" aria-label="Anterior">&#8249;</button>
+                  <button class="slider-btn slider-btn--next" data-slider="sindico" data-dir="1" aria-label="Próximo">&#8250;</button>
+                </div>
+                <div class="slider-dots" id="slider-sindico-dots" aria-hidden="true">
+                  <button class="slider-dot active" data-slider="sindico" data-index="0"></button>
+                  <button class="slider-dot" data-slider="sindico" data-index="1"></button>
+                  <button class="slider-dot" data-slider="sindico" data-index="2"></button>
+                  <button class="slider-dot" data-slider="sindico" data-index="3"></button>
                 </div>
               </div>
 
