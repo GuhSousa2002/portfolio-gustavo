@@ -684,106 +684,6 @@
       font-size: .82rem
     }
 
-    /* --- Screenshot slider --- */
-    .screenshot-slider {
-      position: relative;
-      width: 100%;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #09121e;
-      border: 1px solid rgba(148, 186, 214, .14);
-      box-shadow: 0 18px 55px rgba(0, 0, 0, .38)
-    }
-
-    .screenshot-slider__track {
-      display: flex;
-      transition: transform .42s cubic-bezier(.4, 0, .2, 1)
-    }
-
-    .screenshot-slide {
-      flex: 0 0 100%;
-      position: relative
-    }
-
-    .screenshot-slide img {
-      width: 100%;
-      height: auto;
-      display: block;
-      aspect-ratio: 16/10;
-      object-fit: cover;
-      object-position: top
-    }
-
-    .screenshot-slide figcaption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 10px 14px;
-      background: linear-gradient(transparent, rgba(7, 14, 24, .88));
-      color: #e8f4fb;
-      font-size: .8rem;
-      font-weight: 600;
-      letter-spacing: .01em
-    }
-
-    .slider-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 0 4px
-    }
-
-    .slider-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, .2);
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: background .2s, transform .2s
-    }
-
-    .slider-dot.active {
-      background: var(--accent);
-      transform: scale(1.25)
-    }
-
-    .slider-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, .14);
-      background: rgba(9, 18, 30, .72);
-      backdrop-filter: blur(6px);
-      color: #fff;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: .9rem;
-      transition: background .2s, border-color .2s;
-      padding: 0
-    }
-
-    .slider-btn:hover {
-      background: rgba(31, 198, 159, .22);
-      border-color: var(--accent)
-    }
-
-    .slider-btn--prev {
-      left: 10px
-    }
-
-    .slider-btn--next {
-      right: 10px
-    }
-
     .experience-card__top {
       display: flex;
       align-items: flex-start;
@@ -1186,32 +1086,67 @@
 
         <div class="projects-list">
           <article class="project-card" data-reveal>
-            <div class="project-card__media" style="flex-direction:column;gap:0">
-              <div class="screenshot-slider" id="slider-nextflow" aria-label="Screenshots do Next Flow PDV">
-                <div class="screenshot-slider__track" id="slider-nextflow-track">
-                  <figure class="screenshot-slide">
-                    <img src="./assets/nextflow-login.png" alt="Next Flow PDV — Tela de login" loading="lazy" />
-                    <figcaption>Login — Tela inicial do sistema</figcaption>
-                  </figure>
-                  <figure class="screenshot-slide">
-                    <img src="./assets/nextflow-dashboard.png" alt="Next Flow PDV — Dashboard" loading="lazy" />
-                    <figcaption>Dashboard — Visão geral de vendas e métricas</figcaption>
-                  </figure>
-                  <figure class="screenshot-slide">
-                    <img src="./assets/nextflow-financeiro.png" alt="Next Flow PDV — Módulo financeiro"
-                      loading="lazy" />
-                    <figcaption>Financeiro — Controle de receitas, despesas e fluxo de caixa</figcaption>
-                  </figure>
+            <div class="project-card__media">
+              <div class="ui-preview ui-preview--pdv" aria-hidden="true">
+                <div class="ui-preview__chrome">
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
-                <button class="slider-btn slider-btn--prev" data-slider="nextflow" data-dir="-1"
-                  aria-label="Anterior">&#8249;</button>
-                <button class="slider-btn slider-btn--next" data-slider="nextflow" data-dir="1"
-                  aria-label="Próximo">&#8250;</button>
-              </div>
-              <div class="slider-dots" id="slider-nextflow-dots" aria-hidden="true">
-                <button class="slider-dot active" data-slider="nextflow" data-index="0"></button>
-                <button class="slider-dot" data-slider="nextflow" data-index="1"></button>
-                <button class="slider-dot" data-slider="nextflow" data-index="2"></button>
+                <div class="ui-preview__canvas">
+                  <div class="ui-preview__sidebar">
+                    <div class="ui-preview__brand">Next Flow</div>
+                    <div class="ui-preview__navline"></div>
+                    <div class="ui-preview__navline"></div>
+                    <div class="ui-preview__navline"></div>
+                    <div class="ui-preview__navline"></div>
+                  </div>
+
+                  <div class="ui-preview__screen">
+                    <div class="ui-preview__stats">
+                      <article class="ui-preview__metric">
+                        <span>Vendas</span>
+                        <strong>PDV</strong>
+                      </article>
+                      <article class="ui-preview__metric">
+                        <span>Estoque</span>
+                        <strong>Sync</strong>
+                      </article>
+                      <article class="ui-preview__metric">
+                        <span>Financeiro</span>
+                        <strong>Fluxo</strong>
+                      </article>
+                    </div>
+
+                    <section class="ui-preview__panel">
+                      <span class="ui-preview__eyebrow">Operação diária</span>
+                      <div class="ui-preview__bars">
+                        <div class="ui-preview__bar ui-preview__bar--accent"></div>
+                        <div class="ui-preview__bar ui-preview__bar--medium"></div>
+                        <div class="ui-preview__bar"></div>
+                      </div>
+                    </section>
+
+                    <div class="ui-preview__modules">
+                      <article class="ui-preview__module">
+                        <span>Clientes</span>
+                        <strong>CRM</strong>
+                      </article>
+                      <article class="ui-preview__module">
+                        <span>Permissões</span>
+                        <strong>Perfis</strong>
+                      </article>
+                      <article class="ui-preview__module">
+                        <span>Lojas</span>
+                        <strong>Multiunidade</strong>
+                      </article>
+                      <article class="ui-preview__module">
+                        <span>Caixa</span>
+                        <strong>Controle</strong>
+                      </article>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -1268,38 +1203,50 @@
           </article>
 
           <article class="project-card project-card--reverse" data-reveal>
-            <div class="project-card__media" style="flex-direction:column;gap:0">
-              <div class="screenshot-slider" id="slider-sindico" aria-label="Screenshots do Síndico Digital">
-                <div class="screenshot-slider__track" id="slider-sindico-track">
-                  <figure class="screenshot-slide">
-                    <img src="./assets/sindico-painel.png" alt="Síndico Digital — Painel principal" loading="lazy" />
-                    <figcaption>Painel — Visão geral do condomínio com resumo financeiro e comunicados</figcaption>
-                  </figure>
-                  <figure class="screenshot-slide">
-                    <img src="./assets/sindico-financeiro.png" alt="Síndico Digital — Módulo financeiro"
-                      loading="lazy" />
-                    <figcaption>Financeiro — Taxa condominial, Pix, boleto e histórico de pagamentos</figcaption>
-                  </figure>
-                  <figure class="screenshot-slide">
-                    <img src="./assets/sindico-transparencia.png" alt="Síndico Digital — Transparência"
-                      loading="lazy" />
-                    <figcaption>Transparência — Receitas, despesas e comprovantes do condomínio</figcaption>
-                  </figure>
-                  <figure class="screenshot-slide">
-                    <img src="./assets/sindico-salao.png" alt="Síndico Digital — Salão de Festa" loading="lazy" />
-                    <figcaption>Salão de Festa — Agendamento com calendário e horários disponíveis</figcaption>
-                  </figure>
+            <div class="project-card__media">
+              <div class="ui-preview ui-preview--sindico" aria-hidden="true">
+                <div class="ui-preview__chrome">
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
-                <button class="slider-btn slider-btn--prev" data-slider="sindico" data-dir="-1"
-                  aria-label="Anterior">&#8249;</button>
-                <button class="slider-btn slider-btn--next" data-slider="sindico" data-dir="1"
-                  aria-label="Próximo">&#8250;</button>
-              </div>
-              <div class="slider-dots" id="slider-sindico-dots" aria-hidden="true">
-                <button class="slider-dot active" data-slider="sindico" data-index="0"></button>
-                <button class="slider-dot" data-slider="sindico" data-index="1"></button>
-                <button class="slider-dot" data-slider="sindico" data-index="2"></button>
-                <button class="slider-dot" data-slider="sindico" data-index="3"></button>
+                <div class="ui-preview__canvas ui-preview__canvas--single">
+                  <div class="ui-preview__screen">
+                    <section class="ui-preview__panel ui-preview__panel--hero">
+                      <span class="ui-preview__eyebrow">Gestão condominial</span>
+                      <strong class="ui-preview__headline">Comunicação, transparência e rotina administrativa</strong>
+                    </section>
+
+                    <div class="ui-preview__modules ui-preview__modules--wide">
+                      <article class="ui-preview__module">
+                        <span>Avisos</span>
+                        <strong>Comunicados</strong>
+                      </article>
+                      <article class="ui-preview__module">
+                        <span>Financeiro</span>
+                        <strong>Boletos</strong>
+                      </article>
+                      <article class="ui-preview__module">
+                        <span>Reservas</span>
+                        <strong>Agenda</strong>
+                      </article>
+                      <article class="ui-preview__module">
+                        <span>Documentos</span>
+                        <strong>Central</strong>
+                      </article>
+                    </div>
+
+                    <section class="ui-preview__panel">
+                      <span class="ui-preview__eyebrow">Experiência organizada</span>
+                      <div class="ui-preview__bars">
+                        <div class="ui-preview__bar ui-preview__bar--accent"></div>
+                        <div class="ui-preview__bar ui-preview__bar--medium"></div>
+                        <div class="ui-preview__bar"></div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+                <p class="ui-preview__caption">Preview conceitual para exibir screenshots do produto</p>
               </div>
             </div>
 
@@ -1649,25 +1596,6 @@
 
       const year = document.querySelector('[data-year]');
       if (year) year.textContent = new Date().getFullYear();
-
-      // --- Screenshot sliders ---
-      const sliders = {};
-      document.querySelectorAll('.screenshot-slider').forEach(el => {
-        const id = el.id.replace('slider-', '');
-        const track = el.querySelector('.screenshot-slider__track');
-        const slides = track.querySelectorAll('.screenshot-slide');
-        sliders[id] = { track, slides, current: 0 };
-        const goTo = (idx) => {
-          sliders[id].current = (idx + slides.length) % slides.length;
-          track.style.transform = `translateX(-${sliders[id].current * 100}%)`;
-          document.querySelectorAll(`[data-slider="${id}"].slider-dot`).forEach((d, i) =>
-            d.classList.toggle('active', i === sliders[id].current));
-        };
-        el.querySelectorAll('.slider-btn').forEach(btn =>
-          btn.addEventListener('click', () => goTo(sliders[id].current + +btn.dataset.dir)));
-        document.querySelectorAll(`[data-slider="${id}"].slider-dot`).forEach(dot =>
-          dot.addEventListener('click', () => goTo(+dot.dataset.index)));
-      });
     });
 
   </script>
