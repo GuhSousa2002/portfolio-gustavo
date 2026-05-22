@@ -1,30 +1,42 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gustavo Guilherme da Silva Sousa | Portfólio profissional</title>
-  <meta name="description"
-    content="Portfólio profissional de Gustavo Guilherme da Silva Sousa, Desenvolvedor Full Stack com foco em React, Node.js e TypeScript." />
-  <meta name="theme-color" content="#0b1826" />
+  <title>Gustavo Sousa | Desenvolvedor Full Stack</title>
+  <meta name="description" content="Portfólio de Gustavo Sousa, Desenvolvedor Full Stack com foco em React, Node.js e TypeScript. Disponível para oportunidades Júnior e Pleno." />
+  <meta name="theme-color" content="#09121e" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gustavo Sousa | Desenvolvedor Full Stack" />
+  <meta property="og:description" content="Desenvolvedor Full Stack com stack centrada em React, Node.js e TypeScript. Projetos reais em produção." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://portfolio-gustavo-lyart.vercel.app/" />
+
+  <!-- Favicon inline -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231fc69f'/><text x='16' y='22' font-family='sans-serif' font-weight='900' font-size='16' text-anchor='middle' fill='%2309121e'>GS</text></svg>" />
+
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
-  <!-- Estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
+  <!-- Barra de progresso de scroll -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
   <header class="site-header" id="topo">
     <div class="container site-header__inner">
-      <a class="brand" href="#topo" aria-label="Voltar ao topo do portfólio">
+      <a class="brand" href="#topo" aria-label="Voltar ao topo">
         <span class="brand__name">Gustavo Sousa</span>
-        <span class="brand__role">Full Stack | React, Node.js, TypeScript</span>
+        <span class="brand__role">Full Stack · React · Node.js · TypeScript</span>
       </a>
 
-      <nav class="site-nav" aria-label="Seções principais">
+      <nav class="site-nav" id="siteNav" aria-label="Seções principais">
         <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>
         <a href="#experiencia">Experiência</a>
@@ -33,23 +45,45 @@
         <a href="#contato">Contato</a>
       </nav>
 
-      <a class="header-cta" href="./curriculo-gustavo.pdf" target="_blank" rel="noreferrer">
-        Currículo PDF
-      </a>
+      <div class="header-right">
+        <a class="header-cta" href="./curriculo-gustavo.pdf" target="_blank" rel="noreferrer">
+          Currículo PDF
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
+  <!-- Overlay menu mobile -->
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true">
+    <nav class="nav-overlay__links" aria-label="Menu mobile">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#formacao">Formação</a>
+      <a href="#contato">Contato</a>
+      <a href="./curriculo-gustavo.pdf" target="_blank" rel="noreferrer" class="nav-overlay__cta">Currículo PDF</a>
+    </nav>
+  </div>
+
   <main>
+    <!-- ===== HERO ===== -->
     <section class="hero" id="inicio" data-section>
       <div class="container hero__layout">
         <article class="hero__content panel" data-reveal>
+
           <p class="eyebrow">
-            Disponível para vagas de Desenvolvimento Web Full Stack, Infraestrutura Júnior e QA
+            <span class="available-dot" aria-hidden="true"></span>
+            Disponível para vagas Full Stack Júnior e Pleno
           </p>
-          <h1>Gustavo Guilherme da Silva Sousa</h1>
-          <p class="hero__role">Desenvolvedor Full Stack | React, Node.js, TypeScript</p>
+
+          <h1>Gustavo<br>Sousa</h1>
+          <p class="hero__role">Desenvolvedor Full Stack</p>
           <p class="hero__lead">
-            Desenvolvo aplicações web com foco em clareza, organização e uso real do produto,
+            Desenvolvo aplicações web com foco em clareza, organização e entrega real —
             combinando experiência em software, suporte técnico e base prática em infraestrutura.
           </p>
 
@@ -57,8 +91,7 @@
             <a class="button button--primary" href="./curriculo-gustavo.pdf" target="_blank" rel="noreferrer">
               Currículo PDF
             </a>
-            <a class="button button--secondary" href="https://www.linkedin.com/in/gustavo-sousa-3b282421a/"
-              target="_blank" rel="noreferrer">
+            <a class="button button--secondary" href="https://www.linkedin.com/in/gustavo-sousa-3b282421a/" target="_blank" rel="noreferrer">
               LinkedIn
             </a>
             <a class="button button--secondary" href="https://github.com/GuhSousa2002" target="_blank" rel="noreferrer">
@@ -72,15 +105,15 @@
           <ul class="hero__signals">
             <li>
               <span>Formação atual</span>
-              <strong>ADS em conclusão na FATEC São Caetano do Sul</strong>
+              <strong>ADS · FATEC São Caetano do Sul</strong>
             </li>
             <li>
               <span>Stack central</span>
-              <strong>React, Node.js, TypeScript e APIs REST</strong>
+              <strong>React · Node.js · TypeScript · APIs REST</strong>
             </li>
             <li>
               <span>Vivência prática</span>
-              <strong>TI em ambiente crítico no Ministério Público do Trabalho</strong>
+              <strong>TI em ambiente crítico no MPT</strong>
             </li>
           </ul>
         </article>
@@ -88,10 +121,10 @@
         <aside class="hero__panel" data-reveal>
           <article class="panel">
             <p class="section-kicker">Leitura rápida</p>
-            <h2>Perfil técnico com visão de produto, suporte e operação</h2>
+            <h2>Perfil técnico com visão de produto e operação</h2>
             <p class="hero__panel-copy">
               Desenvolvedor em formação com repertório prático em desenvolvimento web e atuação
-              institucional em suporte e infraestrutura, preparado para contribuir com organização,
+              institucional em suporte e infraestrutura — preparado para contribuir com organização,
               confiabilidade e evolução contínua.
             </p>
 
@@ -126,15 +159,13 @@
       </div>
     </section>
 
+    <!-- ===== SOBRE ===== -->
     <section class="section" id="sobre" data-section>
       <div class="container">
         <header class="section-heading" data-reveal>
           <span class="section-kicker">Sobre mim</span>
           <h2>Desenvolvimento web com base técnica mais ampla</h2>
-          <p>
-            Um perfil construído para entregar bem em software, entender contexto operacional e
-            evoluir com consistência dentro de times de tecnologia.
-          </p>
+          <p>Um perfil construído para entregar bem em software, entender contexto operacional e evoluir com consistência dentro de times de tecnologia.</p>
         </header>
 
         <div class="overview-grid">
@@ -151,8 +182,8 @@
             </p>
             <p>
               Nos projetos de TCC e em produtos autorais, assumi papel ativo na definição de
-              fluxos, implementação e evolução das entregas, sempre com foco em resolver problemas
-              reais sem perder organização e qualidade.
+              fluxos, implementação e evolução das entregas — sempre com foco em resolver
+              problemas reais sem perder organização e qualidade.
             </p>
           </article>
 
@@ -181,20 +212,19 @@
       </div>
     </section>
 
+    <!-- ===== PROJETOS ===== -->
     <section class="section" id="projetos" data-section>
       <div class="container">
         <header class="section-heading" data-reveal>
           <span class="section-kicker">Projetos</span>
           <h2>Projetos que mostram repertório técnico e senso de produto</h2>
-          <p>
-            Os destaques abaixo foram organizados para recrutadores identificarem rapidamente
-            contexto, stack, responsabilidade e valor prático de cada entrega.
-          </p>
+          <p>Organizados para recrutadores identificarem rapidamente contexto, stack, responsabilidade e valor prático de cada entrega.</p>
         </header>
 
         <div class="projects-list">
+          <!-- Next Flow PDV -->
           <article class="project-card" data-reveal>
-            <div class="project-card__media" style="flex-direction:column;gap:0">
+            <div class="project-card__media">
               <div class="screenshot-slider" id="slider-nextflow" aria-label="Screenshots do Next Flow PDV">
                 <div class="screenshot-slider__track" id="slider-nextflow-track">
                   <figure class="screenshot-slide">
@@ -237,12 +267,9 @@
 
             <div class="project-card__body">
               <div class="project-card__head">
-                <span class="project-badge">Projeto principal de TCC</span>
+                <span class="project-badge">TCC · Projeto principal</span>
                 <h3>Next Flow PDV</h3>
-                <p>
-                  Sistema web de ponto de venda e gestão operacional pensado para rotinas reais de
-                  venda, estoque, clientes, permissões e financeiro.
-                </p>
+                <p>Sistema web de ponto de venda e gestão operacional pensado para rotinas reais de venda, estoque, clientes, permissões e financeiro.</p>
               </div>
 
               <div class="project-facts">
@@ -258,37 +285,28 @@
                     <span class="stack-pill">JWT</span>
                   </div>
                 </article>
-
                 <article>
                   <span class="project-facts__label">Meu papel</span>
-                  <p>
-                    Atuação full stack na implementação dos módulos, organização funcional do
-                    sistema e participação ativa nas decisões centrais do projeto.
-                  </p>
+                  <p>Atuação full stack na implementação dos módulos, organização funcional do sistema e participação ativa nas decisões centrais do projeto.</p>
                 </article>
               </div>
 
               <ul class="project-highlights">
                 <li>Módulos administrativos e operacionais com foco em clareza de fluxo.</li>
                 <li>Visão de produto alinhada a permissões, crescimento e uso contínuo.</li>
-                <li>Estrutura preparada para apoiar rotina real de operação e gestão.</li>
+                <li>Produto rodando em produção com deploy real acessível.</li>
               </ul>
 
               <div class="project-actions">
-                <a class="button button--primary" href="https://nextflowpdv.com.br/auth/login" target="_blank"
-                  rel="noreferrer">
-                  Acessar projeto
-                </a>
-                <a class="button button--secondary" href="https://github.com/thiagoSEP121914/black_flow_pdv"
-                  target="_blank" rel="noreferrer">
-                  Ver repositório
-                </a>
+                <a class="button button--primary" href="https://nextflowpdv.com.br/auth/login" target="_blank" rel="noreferrer">Acessar projeto</a>
+                <a class="button button--secondary" href="https://github.com/thiagoSEP121914/black_flow_pdv" target="_blank" rel="noreferrer">Ver repositório</a>
               </div>
             </div>
           </article>
 
+          <!-- Síndico Digital -->
           <article class="project-card project-card--reverse" data-reveal>
-            <div class="project-card__media" style="flex-direction:column;gap:0">
+            <div class="project-card__media">
               <div class="screenshot-slider" id="slider-sindico" aria-label="Screenshots do Síndico Digital">
                 <div class="screenshot-slider__track" id="slider-sindico-track">
                   <figure class="screenshot-slide">
@@ -296,13 +314,11 @@
                     <figcaption>Painel — Visão geral do condomínio com resumo financeiro e comunicados</figcaption>
                   </figure>
                   <figure class="screenshot-slide">
-                    <img src="./assets/sindico-financeiro.png" alt="Síndico Digital — Módulo financeiro"
-                      loading="lazy" />
+                    <img src="./assets/sindico-financeiro.png" alt="Síndico Digital — Módulo financeiro" loading="lazy" />
                     <figcaption>Financeiro — Taxa condominial, Pix, boleto e histórico de pagamentos</figcaption>
                   </figure>
                   <figure class="screenshot-slide">
-                    <img src="./assets/sindico-transparencia.png" alt="Síndico Digital — Transparência"
-                      loading="lazy" />
+                    <img src="./assets/sindico-transparencia.png" alt="Síndico Digital — Transparência" loading="lazy" />
                     <figcaption>Transparência — Receitas, despesas e comprovantes do condomínio</figcaption>
                   </figure>
                   <figure class="screenshot-slide">
@@ -310,10 +326,8 @@
                     <figcaption>Salão de Festa — Agendamento com calendário e horários disponíveis</figcaption>
                   </figure>
                 </div>
-                <button class="slider-btn slider-btn--prev" data-slider="sindico" data-dir="-1"
-                  aria-label="Anterior">&#8249;</button>
-                <button class="slider-btn slider-btn--next" data-slider="sindico" data-dir="1"
-                  aria-label="Próximo">&#8250;</button>
+                <button class="slider-btn slider-btn--prev" data-slider="sindico" data-dir="-1" aria-label="Anterior">&#8249;</button>
+                <button class="slider-btn slider-btn--next" data-slider="sindico" data-dir="1" aria-label="Próximo">&#8250;</button>
               </div>
               <div class="slider-dots" id="slider-sindico-dots" aria-hidden="true">
                 <button class="slider-dot active" data-slider="sindico" data-index="0"></button>
@@ -327,10 +341,7 @@
               <div class="project-card__head">
                 <span class="project-badge">Produto digital</span>
                 <h3>Síndico Digital</h3>
-                <p>
-                  Plataforma criada para concentrar comunicação, transparência e processos
-                  administrativos em uma experiência mais clara para gestão condominial.
-                </p>
+                <p>Plataforma criada para concentrar comunicação, transparência e processos administrativos em uma experiência mais clara para gestão condominial.</p>
               </div>
 
               <div class="project-facts">
@@ -345,31 +356,21 @@
                     <span class="stack-pill">CSS</span>
                   </div>
                 </article>
-
                 <article>
                   <span class="project-facts__label">Meu papel</span>
-                  <p>
-                    Estruturação do produto, implementação da interface e refinamento da
-                    experiência para deixar a navegação mais acessível e objetiva.
-                  </p>
+                  <p>Estruturação do produto, implementação da interface e refinamento da experiência para deixar a navegação mais acessível e objetiva.</p>
                 </article>
               </div>
 
               <ul class="project-highlights">
                 <li>Foco em organização da informação e entendimento rápido do usuário.</li>
-                <li>Interface pensada para centralizar fluxos comuns do dia a dia condominial.</li>
+                <li>Interface para centralizar fluxos comuns do dia a dia condominial.</li>
                 <li>Projeto voltado a resolver problemas reais com linguagem digital simples.</li>
               </ul>
 
               <div class="project-actions">
-                <a class="button button--primary" href="https://sidi-sindico-digital.vercel.app/" target="_blank"
-                  rel="noreferrer">
-                  Ver deploy
-                </a>
-                <a class="button button--secondary" href="https://github.com/GuhSousa2002" target="_blank"
-                  rel="noreferrer">
-                  Ver GitHub
-                </a>
+                <a class="button button--primary" href="https://sidi-sindico-digital.vercel.app/" target="_blank" rel="noreferrer">Ver deploy</a>
+                <a class="button button--secondary" href="https://github.com/GuhSousa2002" target="_blank" rel="noreferrer">Ver GitHub</a>
               </div>
             </div>
           </article>
@@ -377,6 +378,7 @@
       </div>
     </section>
 
+    <!-- ===== EXPERIÊNCIA ===== -->
     <section class="section" id="experiencia" data-section>
       <div class="container">
         <article class="experience-card panel" data-reveal>
@@ -385,11 +387,8 @@
               <span class="section-kicker">Experiência</span>
               <h2>Ministério Público do Trabalho</h2>
               <p class="experience-card__role">Estagiário de TI | Infraestrutura e Suporte</p>
-              <p class="experience-card__meta">
-                Procuradoria Regional do Trabalho da 2ª Região · 2024 — 2025
-              </p>
+              <p class="experience-card__meta">Procuradoria Regional do Trabalho da 2ª Região · 2024 — 2025</p>
             </div>
-
             <div class="experience-badges">
               <span class="soft-badge">Sistemas críticos</span>
               <span class="soft-badge">Videoconferência</span>
@@ -400,10 +399,8 @@
           <div class="experience-card__body">
             <p class="experience-card__summary">
               Atuação em ambiente institucional de alta responsabilidade, apoiando usuários,
-              estações de trabalho, conectividade e rotinas que exigem estabilidade, organização e
-              resposta rápida.
+              estações de trabalho, conectividade e rotinas que exigem estabilidade, organização e resposta rápida.
             </p>
-
             <ul class="experience-list">
               <li>Suporte técnico a usuários em sistemas institucionais críticos, incluindo PJe e SEI.</li>
               <li>Formatação, instalação de imagens corporativas e padronização de estações de trabalho.</li>
@@ -431,25 +428,20 @@
       </div>
     </section>
 
+    <!-- ===== HABILIDADES ===== -->
     <section class="section" id="habilidades" data-section>
       <div class="container">
         <header class="section-heading" data-reveal>
           <span class="section-kicker">Habilidades técnicas</span>
           <h2>Stack organizada por áreas para leitura rápida</h2>
-          <p>
-            As tecnologias foram distribuídas por blocos para destacar o que hoje representa melhor
-            meu perfil profissional e o que consigo sustentar com clareza em entrevista.
-          </p>
+          <p>Distribuídas por blocos para destacar o que representa melhor meu perfil e o que consigo sustentar com clareza em entrevista.</p>
         </header>
 
         <div class="skills-grid">
           <article class="skill-card panel" data-reveal>
             <div class="skill-card__header">
               <span class="skill-card__icon">FE</span>
-              <div>
-                <h3>Frontend</h3>
-                <p>Interface, navegação e experiência do usuário.</p>
-              </div>
+              <div><h3>Frontend</h3><p>Interface, navegação e experiência do usuário.</p></div>
             </div>
             <div class="tech-list">
               <span class="tech-chip tech-chip--primary"><span class="tech-chip__icon">Re</span>React</span>
@@ -465,10 +457,7 @@
           <article class="skill-card panel" data-reveal>
             <div class="skill-card__header">
               <span class="skill-card__icon">BE</span>
-              <div>
-                <h3>Backend</h3>
-                <p>APIs, autenticação e estrutura de regras.</p>
-              </div>
+              <div><h3>Backend</h3><p>APIs, autenticação e estrutura de regras.</p></div>
             </div>
             <div class="tech-list">
               <span class="tech-chip tech-chip--primary"><span class="tech-chip__icon">Nd</span>Node.js</span>
@@ -481,10 +470,7 @@
           <article class="skill-card panel" data-reveal>
             <div class="skill-card__header">
               <span class="skill-card__icon">DB</span>
-              <div>
-                <h3>Banco de dados</h3>
-                <p>Modelagem e persistência de dados.</p>
-              </div>
+              <div><h3>Banco de dados</h3><p>Modelagem e persistência de dados.</p></div>
             </div>
             <div class="tech-list">
               <span class="tech-chip tech-chip--primary"><span class="tech-chip__icon">Mg</span>MongoDB</span>
@@ -497,10 +483,7 @@
           <article class="skill-card panel" data-reveal>
             <div class="skill-card__header">
               <span class="skill-card__icon">FX</span>
-              <div>
-                <h3>Ferramentas</h3>
-                <p>Fluxo de trabalho, validação e apoio ao desenvolvimento.</p>
-              </div>
+              <div><h3>Ferramentas</h3><p>Fluxo de trabalho, validação e apoio ao desenvolvimento.</p></div>
             </div>
             <div class="tech-list">
               <span class="tech-chip tech-chip--primary"><span class="tech-chip__icon">Gt</span>Git</span>
@@ -510,17 +493,13 @@
               <span class="tech-chip"><span class="tech-chip__icon">Zd</span>Zod</span>
               <span class="tech-chip"><span class="tech-chip__icon">RH</span>React Hook Form</span>
               <span class="tech-chip"><span class="tech-chip__icon">Fg</span>Figma</span>
-              <span class="tech-chip"><span class="tech-chip__icon">XL</span>Excel</span>
             </div>
           </article>
 
-          <article class="skill-card panel" data-reveal>
+          <article class="skill-card skill-card--wide panel" data-reveal>
             <div class="skill-card__header">
               <span class="skill-card__icon">IT</span>
-              <div>
-                <h3>Infraestrutura e suporte</h3>
-                <p>Base operacional para ambientes corporativos e atendimento técnico.</p>
-              </div>
+              <div><h3>Infraestrutura e suporte</h3><p>Base operacional para ambientes corporativos e atendimento técnico.</p></div>
             </div>
             <div class="tech-list">
               <span class="tech-chip"><span class="tech-chip__icon">SP</span>Suporte técnico</span>
@@ -535,26 +514,23 @@
         </div>
 
         <p class="skills-note" data-reveal>
-          Outras linguagens com contato acadêmico e prático: <strong>Java</strong> e
-          <strong>Python</strong>.
+          Outras linguagens com contato acadêmico e prático: <strong>Java</strong> e <strong>Python</strong>.
         </p>
       </div>
     </section>
 
+    <!-- ===== FORMAÇÃO ===== -->
     <section class="section" id="formacao" data-section>
       <div class="container">
         <header class="section-heading" data-reveal>
           <span class="section-kicker">Formação e diferenciais</span>
-          <h2>Base acadêmica, idioma e características de trabalho</h2>
-          <p>
-            Fechamento do perfil com foco no que ajuda a contextualizar maturidade, adaptação e
-            potencial de crescimento.
-          </p>
+          <h2>Base acadêmica, certificações e características de trabalho</h2>
+          <p>Fechamento do perfil com foco no que ajuda a contextualizar maturidade, adaptação e potencial de crescimento.</p>
         </header>
 
         <div class="credentials-grid">
           <article class="panel" data-reveal>
-            <h3>Formação</h3>
+            <h3>Formação acadêmica</h3>
 
             <div class="education-item">
               <strong>FATEC São Caetano do Sul – Antonio Russo</strong>
@@ -566,6 +542,26 @@
               <strong>ETEC Prof. Aprígio Gonzaga</strong>
               <p>Formação em Administração</p>
               <span>Base complementar em organização, processos e visão operacional.</span>
+            </div>
+
+            <h3 style="margin-top:24px">Certificações</h3>
+
+            <div class="education-item cert-item">
+              <div class="cert-icon" aria-hidden="true">CISCO</div>
+              <div>
+                <strong>Noções Básicas de Rede</strong>
+                <p>Cisco Networking Academy · Nov 2024</p>
+                <span>Redes, protocolos e comunicação de dados.</span>
+              </div>
+            </div>
+
+            <div class="education-item cert-item">
+              <div class="cert-icon" aria-hidden="true">CISCO</div>
+              <div>
+                <strong>Learn-A-Thon 2024</strong>
+                <p>Cisco Networking Academy · Dez 2024</p>
+                <span>Learner Achievement Award por desempenho excepcional.</span>
+              </div>
             </div>
           </article>
 
@@ -590,16 +586,14 @@
       </div>
     </section>
 
+    <!-- ===== CONTATO ===== -->
     <section class="section" id="contato" data-section>
       <div class="container">
         <article class="contact-card panel" data-reveal>
           <div class="contact-card__content">
             <span class="section-kicker">Contato</span>
             <h2>Vamos conversar sobre oportunidades em tecnologia</h2>
-            <p>
-              Estou aberto a conversas sobre desenvolvimento web full stack, infraestrutura
-              júnior, QA e funções técnicas com espaço para crescimento.
-            </p>
+            <p>Estou aberto a conversas sobre desenvolvimento web full stack, infraestrutura júnior, QA e funções técnicas com espaço para crescimento.</p>
           </div>
 
           <div class="contact-grid">
@@ -607,10 +601,10 @@
               <span class="contact-link__label">Email</span>
               <strong>gustavo93ggss@gmail.com</strong>
               <span class="contact-link__note">Canal direto para propostas e networking.</span>
+              <button class="copy-btn" data-copy="gustavo93ggss@gmail.com" aria-label="Copiar email" onclick="event.preventDefault()">Copiar</button>
             </a>
 
-            <a class="contact-link" href="https://www.linkedin.com/in/gustavo-sousa-3b282421a/" target="_blank"
-              rel="noreferrer">
+            <a class="contact-link" href="https://www.linkedin.com/in/gustavo-sousa-3b282421a/" target="_blank" rel="noreferrer">
               <span class="contact-link__label">LinkedIn</span>
               <strong>gustavo-sousa-3b282421a</strong>
               <span class="contact-link__note">Perfil profissional e histórico de carreira.</span>
@@ -636,10 +630,10 @@
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <p><span data-year></span> · Gustavo Guilherme da Silva Sousa</p>
+      <a href="https://portfolio-gustavo-lyart.vercel.app" class="footer-link">portfolio-gustavo-lyart.vercel.app</a>
     </div>
   </footer>
-  <!-- Lógica: scroll reveal, nav ativa, sliders -->
+
   <script src="./script.js"></script>
 </body>
-
 </html>
